@@ -1,0 +1,1 @@
+Today I woke up and wanted to implement a stack.
