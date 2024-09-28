@@ -22,6 +22,7 @@ impl<T> Stack<T> {
         let buf = Self::alloc_new_buf(layout);
         Self { len: 0, cap: 2, buf, layout }
     }
+
     /// Creates a new stack with the specified capacity.
     ///
     /// # Panics
@@ -86,6 +87,7 @@ impl<T> Stack<T> {
         // Safety: ptr and layout are guaranteed to be valid
         unsafe { alloc::dealloc(ptr as *mut u8, layout) }
     }
+
     /// Gets a reference to the element at the given index, if it exists.
     ///
     /// Safe version of [`Stack::get_unchecked`]
